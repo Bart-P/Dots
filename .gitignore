@@ -1,0 +1,61 @@
+# Global ignore for all directories
+
+# Swap/backup/lock files
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# Neovim specific
+nvim/.local/
+nvim/.netrwhist
+nvim/undo/
+nvim/swap/
+nvim/backup/
+nvim/session/
+nvim/site/pack/packer/start/*/.git/  # nested git dirs (optional)
+
+# Ignore any lock files (like sessions or plugin management)
+nvim/**/lockfile
+nvim/**/.lock
+
+# Python cache (e.g., for Qtile or MPD scripts)
+__pycache__/
+*.pyc
+*.pyo
+
+# MPD specific (local runtime files that shouldn't be tracked)
+mpd/tag_cache
+mpd/*.pid
+mpd/*.log
+mpd/*.sock
+mpd/database
+mpd/state
+
+# ncmpcpp local data (optional, if you store static config only)
+ncmpcpp/lyrics/
+ncmpcpp/scroll/  # if used
+
+# Qtile specific (if you generate logs or have compiled bytecode)
+qtile/*.log
+
+# Kitty (cache and logs)
+kitty/*.log
+
+# Fish (completions and history should usually be ignored)
+fish/fish_history
+fish/completions/
+
+# General backup or temp files
+*.orig
+.DS_Store
+Thumbs.db
+
+# If you use stow but sometimes stow creates symlink backups
+*.bak
+
+# Optional: ignore README/notes if you keep them locally
+README.md
+*.md
+*.txt
