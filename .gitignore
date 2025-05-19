@@ -54,8 +54,3 @@ Thumbs.db
 
 # If you use stow but sometimes stow creates symlink backups
 *.bak
-
-# Optional: ignore README/notes if you keep them locally
-README.md
-*.md
-*.txt
