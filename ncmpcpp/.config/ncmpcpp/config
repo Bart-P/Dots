@@ -1,0 +1,3 @@
+ncmpcpp_directory = "~/.config/ncmpcpp"
+mpd_host = "localhost"
+mpd_port = "6600"
