@@ -274,14 +274,11 @@ powerbutton = widget.TextBox(
         )
 spacer = widget.Spacer(length=5)
 
-# DONE?: Notifications - there are pip packages missing for qtile notifications to work properly?
-# TODO: GIT eval, add ssh etc
 # TODO: finish up neovim (node?)
-# TODO: Make coding stuff work (php, laravel, lsps etc)
 # TODO: copy pasting from and to nvim works? 
-# TODO: zoxide
+# TODO: Make coding stuff work (php, laravel, lsps etc)
 # TODO: start working on post instal script
-# FIX: Why are letters cut (cursiv only)? like X or M has a piece cut out... Is this a "Kitty" or a "Font" problem.
+# DONE?: Notifications - after installing packages, still not working.. Installed dbus-next
 
 screens = [
     Screen(

@@ -3,3 +3,6 @@ if status is-interactive
 end
 
 alias v "nvim"
+alias cd "z"
+
+zoxide init fish | source
