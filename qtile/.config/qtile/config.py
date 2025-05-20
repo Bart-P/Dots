@@ -274,9 +274,7 @@ powerbutton = widget.TextBox(
         )
 spacer = widget.Spacer(length=5)
 
-# TODO: finish up neovim (node?)
 # TODO: copy pasting from and to nvim works? 
-# TODO: Make coding stuff work (php, laravel, lsps etc)
 # TODO: start working on post instal script
 # DONE?: Notifications - after installing packages, still not working.. Installed dbus-next
 
