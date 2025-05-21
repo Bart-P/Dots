@@ -276,7 +276,6 @@ spacer = widget.Spacer(length=5)
 
 wallpaper='~/Pictures/Walls/night woods.jpg'
 
-# TODO: luarock, neovim npm global and pip installed
 # TODO: start working on post instal script
 # FIX?: Notifications - still no bueno, installed all the packages I can remember, and nothing... 
 
@@ -387,7 +386,7 @@ wl_input_rules = None
 wl_xcursor_theme = None
 wl_xcursor_size = 24
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
+# XXX Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
 # mailing lists, GitHub issues, and other WM documentation that suggest setting
 # this string if your java app doesn't work correctly. We may as well just lie
