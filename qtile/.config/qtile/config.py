@@ -274,9 +274,11 @@ powerbutton = widget.TextBox(
         )
 spacer = widget.Spacer(length=5)
 
-# TODO: copy pasting from and to nvim works? 
+wallpaper='~/Pictures/Walls/night woods.jpg'
+
+# TODO: luarock, neovim npm global and pip installed
 # TODO: start working on post instal script
-# DONE?: Notifications - after installing packages, still not working.. Installed dbus-next
+# FIX?: Notifications - still no bueno, installed all the packages I can remember, and nothing... 
 
 screens = [
     Screen(
@@ -304,7 +306,7 @@ screens = [
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
-        wallpaper='~/Pictures/wallhaven-9oxjvd.png',
+        wallpaper=wallpaper,
         wallpaper_mode="fill",
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
@@ -335,7 +337,7 @@ screens = [
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
-        wallpaper='~/Pictures/wallhaven-9oxjvd.png',
+        wallpaper=wallpaper,
         wallpaper_mode="fill",
     )
 ]
