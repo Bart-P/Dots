@@ -221,7 +221,7 @@ task_list1 = widget.TaskList(
                 )
 task_list2 = widget.TaskList(
                     rounded=False,
-                    padding_y=3,
+                    padding_y=2,
                     padding_x=10,
                     icon_size=0,
                     border=colors["primary"],
@@ -276,6 +276,7 @@ spacer = widget.Spacer(length=5)
 
 wallpaper='~/Pictures/Walls/night woods.jpg'
 
+# TODO: checkout RMPC instead of ncmpcpp. Seems nicer to customize etc.
 # TODO: start working on post instal script
 # FIX?: Notifications - still no bueno, installed all the packages I can remember, and nothing... 
 
