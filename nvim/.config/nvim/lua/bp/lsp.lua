@@ -1,4 +1,7 @@
 require("mason").setup()
+-- TODO: remove volar, implement vue_ls instead
+-- TODO: figure out the vim global thing
+-- TODO: intelephense license?
 require("mason-lspconfig").setup({
     ensure_installed = {
         "intelephense", -- PHP
