@@ -5,6 +5,9 @@ end
 alias v "nvim"
 alias cd "z"
 
+set -Ux VISUAL nvim
+set -Ux EDITOR nvim
+
 set -U fish_user_paths $fish_user_paths $HOME/.config/composer/vendor/bin
 
 zoxide init fish | source
