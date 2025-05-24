@@ -276,7 +276,6 @@ spacer = widget.Spacer(length=5)
 
 wallpaper='~/Pictures/Walls/night woods.jpg'
 
-# TODO: make project starter from terminal (like rofi "qp", but from terminal), primes sessionizer script?? 
 # TODO: start working on post instal script
 # FIX?: Notifications - still no bueno, installed all the packages I can remember, and nothing... 
 

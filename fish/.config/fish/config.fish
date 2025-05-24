@@ -2,6 +2,11 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+function fish_user_key_bindings
+    # Binds Alt-p to project launcher script 
+    bind \ep "$HOME/Scripts/terminal/terminal_project_launcher.sh"
+end
+
 alias v "nvim"
 alias cd "z"
 
