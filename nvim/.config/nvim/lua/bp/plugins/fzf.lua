@@ -1,7 +1,9 @@
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-
+	opts = {
+		oldfiles = { include_current_session = true },
+	},
 	keys = {
 		{ "<C-f>", "<cmd>FzfLua git_files<cr>", desc = "FZF: Find git files" },
 		{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "FZF: Find files" },
@@ -13,8 +15,5 @@ return {
 		{ "<leader>fr", "<cmd>FzfLua registers<cr>", desc = "FZF: Registers" },
 		{ "<leader>fm", "<cmd>FzfLua marks<cr>", desc = "FZF: Marks" },
 		{ "<leader>fc", "<cmd>FzfLua commands<cr>", desc = "FZF: Commands" },
-	},
-	opts = {
-		oldfiles = { include_current_session = true },
 	},
 }
