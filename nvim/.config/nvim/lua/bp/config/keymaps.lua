@@ -1,6 +1,3 @@
--- Yank into system clipboard - does not seem to work keeping for reference
--- vim.keymap.set({'n', 'v'}, '<C-y>', '"+y') -- yank motion
--- vim.keymap.set({'n', 'v'}, '<C-Y>', '"+Y') -- yank line
 require('fzf-lua').setup({
     keymap = {
         fzf = {
