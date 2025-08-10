@@ -202,10 +202,12 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-layout_icon1 = widget.CurrentLayoutIcon(
+layout_icon1 = widget.CurrentLayout(
+                    mode='icon',
                     scale=0.6
                 )
-layout_icon2 = widget.CurrentLayoutIcon(
+layout_icon2 = widget.CurrentLayout(
+                    mode='icon',
                     scale=0.6
                 )
 task_list1 = widget.TaskList(
@@ -276,9 +278,6 @@ spacer = widget.Spacer(length=5)
 
 wallpaper='~/Pictures/Walls/night woods.jpg'
 
-# TODO: start working on post instal script
-# FIX?: Notifications - still no bueno, installed all the packages I can remember, and nothing... 
-
 screens = [
     Screen(
         top=bar.Bar(
@@ -297,7 +296,7 @@ screens = [
                 clock,
                 sep,
                 layout_icon1,
-                spacer
+                spacer,
             ],
             32,
             background=colors["bg-dark"],
