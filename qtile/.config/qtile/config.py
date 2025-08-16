@@ -51,6 +51,7 @@ keys = [
     Key([mod], "l", lazy.next_screen(), lazy.core.hide_cursor(), desc="Move focus to right"),
     Key([mod], "j", lazy.group.next_window(), desc="Focus next window"),
     Key([mod], "k", lazy.group.prev_window(), desc="Move focus up"),
+    Key([mod], "b", lazy.hide_show_bar(position="top")),
     Key([mod], "c",
         lazy.spawn("/home/bp/Scripts/rofi/clipboard.sh"),
         desc="Rofi Clipboard Manager"),
