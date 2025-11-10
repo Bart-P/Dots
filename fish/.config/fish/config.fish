@@ -16,3 +16,6 @@ set -Ux EDITOR nvim
 set -U fish_user_paths $fish_user_paths $HOME/.config/composer/vendor/bin
 
 zoxide init fish | source
+
+# opencode
+fish_add_path /home/bp/.opencode/bin
