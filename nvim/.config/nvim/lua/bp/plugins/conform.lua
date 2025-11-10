@@ -7,6 +7,7 @@ return {
 				php = { "pint" },
 				-- Conform will run the first available formatter
 				javascript = { "prettierd", "prettier", stop_after_first = true },
+				vue = { "prettierd", "prettier", stop_after_first = true },
 			},
 		})
 		-- Manual format command
