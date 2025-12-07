@@ -47,20 +47,21 @@ return {
 				map("n", "<leader>rn", vim.lsp.buf.rename, "LSP: rename")
 				map("n", "<leader>ca", fzf.lsp_code_actions, "Code actions")
 				map("n", "gl", vim.diagnostic.open_float, "Line diagnostics")
-				map("n", "<leader>dp", function()
+				map("n", "<leader>cdp", function()
 					vim.diagnostic.jump({ count = -1, float = true })
 				end, "Prev diagnostic")
-				map("n", "<leader>dn", function()
+				map("n", "<leader>cdn", function()
 					vim.diagnostic.jump({ count = 1, float = true })
 				end, "Next diagnostic")
-				map("n", "<leader>da", fzf.lsp_document_diagnostics, "All buffer diagnostics")
+				map("n", "<leader>cda", fzf.lsp_document_diagnostics, "All buffer diagnostics")
 
 				-- FZF-Lua powered LSP functions
 				map("n", "gd", fzf.lsp_definitions, "Go to definition (fzf)")
 				map("n", "gr", fzf.lsp_references, "References (fzf)")
 				map("n", "gi", fzf.lsp_implementations, "Implementations (fzf)")
-				map("n", "<leader>sd", fzf.lsp_document_symbols, "Document symbols (fzf)")
-				map("n", "<leader>sw", fzf.lsp_workspace_symbols, "Workspace symbols (fzf)")
+				map("n", "<leader>csd", fzf.lsp_document_symbols, "Document symbols (fzf)")
+				-- TODO: workspac symbol does not seem to work
+				map("n", "<leader>csw", fzf.lsp_workspace_symbols, "Workspace symbols (fzf)")
 			end
 
 			local vue_language_server_path = vim.fn.stdpath("data")

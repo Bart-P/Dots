@@ -4,10 +4,11 @@ return {
 	config = function()
         local wk = require("which-key")
 		wk.add({
+			{ "<leader>a", group = "AI (opencode)" },
 			{ "<leader>r", group = "refactor" },
 			{ "<leader>c", group = "code" },
-			{ "<leader>d", group = "diagnostic" },
-			{ "<leader>s", group = "symbol" },
+			{ "<leader>cd", group = "diagnostic" },
+			{ "<leader>cs", group = "symbol" },
 			{ "<leader>f", group = "find" },
 			{ "<leader>y", group = "yank to system clipboard" },
 		})
