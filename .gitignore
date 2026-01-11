@@ -1,5 +1,8 @@
 # Global ignore for all directories
 
+# Node.js
+node_modules/
+
 # Swap/backup/lock files
 *.swp
 *.swo

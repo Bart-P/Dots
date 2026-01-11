@@ -19,3 +19,4 @@ zoxide init fish | source
 
 # opencode
 fish_add_path /home/bp/.opencode/bin
+fish_add_path /home/bp/.local/bin
