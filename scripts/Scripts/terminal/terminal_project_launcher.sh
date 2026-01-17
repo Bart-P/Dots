@@ -13,4 +13,8 @@ if [ $? != 0 ]; then
     tmux new-session -ds "$NAME" -c "$PROJECT_DIR/$NAME"
 fi
 
-tmux attach -t "$NAME"
+if [ -n "$TMUX" ]; then
+    tmux switch-client -t "$NAME"
+else
+    tmux attach -t "$NAME"
+fi
