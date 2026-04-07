@@ -14,6 +14,7 @@ return {
 					"vue_ls", -- Vue
 					"vtsls", -- Vue specific TS Server
 					"lua_ls", -- Lua
+					"gopls", -- Go
 					"bashls", -- Bash
 					"pyright", -- Python
 					"html", -- Html
@@ -24,7 +25,6 @@ return {
 			})
 
 			-- TODO: intelephense license?
-			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local function on_attach(_, bufnr) -- first arg was client, if ever needed
@@ -116,45 +116,32 @@ return {
 				end,
 			}
 			-- nvim 0.11 or above
+			vim.lsp.config("gopls", vue_ls_config)
 			vim.lsp.config("vtsls", vtsls_config)
 			vim.lsp.config("vue_ls", vue_ls_config)
 			vim.lsp.enable({ "vtsls", "vue_ls" })
 
-			-- intelephense
-			vim.lsp.config("intelephense", {
+            local base_config = {
 				capabilities = capabilities,
 				on_attach = on_attach,
-			})
+            }
+			-- intelephense
+			vim.lsp.config("intelephense", base_config)
 
 			-- Bash
-			lspconfig.bashls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
+			vim.lsp.config("bashls", base_config)
 
 			-- Python
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
+			vim.lsp.config("pyright", base_config)
 
 			-- CSS
-			lspconfig.cssls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
+			vim.lsp.config("cssls", base_config)
 
 			-- HTML
-			lspconfig.html.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
+			vim.lsp.config("html", base_config)
 
 			-- Tailwind
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
+			vim.lsp.config("tailwindcss", base_config)
 		end,
 	},
 }

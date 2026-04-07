@@ -3,4 +3,4 @@
 SETUVAR --export EDITOR:nvim
 SETUVAR --export VISUAL:nvim
 SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/home/bp/\x2elocal/bin\x1e/home/bp/\x2eopencode/bin\x1e/home/bp/\x2econfig/composer/vendor/bin
+SETUVAR fish_user_paths:/home/bp/\x2elocal/bin\x1e/home/bp/\x2eopencode/bin\x1e/home/bp/\x2econfig/composer/vendor/bin\x1e/opt/rocm/bin

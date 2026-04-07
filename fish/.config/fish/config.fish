@@ -20,3 +20,7 @@ zoxide init fish | source
 # opencode
 fish_add_path /home/bp/.opencode/bin
 fish_add_path /home/bp/.local/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
