@@ -68,6 +68,11 @@ return {
 				map("n", "<leader>csw", fzf.lsp_workspace_symbols, "Workspace symbols (fzf)")
 			end
 
+			local base_config = {
+				capabilities = capabilities,
+				on_attach = on_attach,
+			}
+
 			local vue_language_server_path = vim.fn.stdpath("data")
 				.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 			local vue_plugin = {
@@ -120,15 +125,11 @@ return {
 				end,
 			}
 			-- nvim 0.11 or above
-			vim.lsp.config("gopls", vue_ls_config)
+			vim.lsp.config("gopls", base_config)
 			vim.lsp.config("vtsls", vtsls_config)
 			vim.lsp.config("vue_ls", vue_ls_config)
 			vim.lsp.enable({ "vtsls", "vue_ls" })
 
-			local base_config = {
-				capabilities = capabilities,
-				on_attach = on_attach,
-			}
 			-- intelephense
 			vim.lsp.config("intelephense", base_config)
 
