@@ -24,7 +24,7 @@ return {
 			})
 
 			-- TODO: intelephense license?
-			local lspconfig = require("lspconfig")
+			-- local lspconfig = vim.lsp.config
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local function on_attach(_, bufnr) -- first arg was client, if ever needed
@@ -127,31 +127,31 @@ return {
 			})
 
 			-- Bash
-			lspconfig.bashls.setup({
+            vim.lsp.config("bashls", {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
 
 			-- Python
-			lspconfig.pyright.setup({
+            vim.lsp.config("pyright", {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
 
 			-- CSS
-			lspconfig.cssls.setup({
+            vim.lsp.config("cssls", {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
 
 			-- HTML
-			lspconfig.html.setup({
+            vim.lsp.config("html", {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
 
 			-- Tailwind
-			lspconfig.tailwindcss.setup({
+            vim.lsp.config("tailwindcss", {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
