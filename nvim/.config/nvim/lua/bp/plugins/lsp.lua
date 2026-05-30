@@ -11,6 +11,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"intelephense", -- PHP
+					"astro", -- Astro
 					"vue_ls", -- Vue
 					"vtsls", -- Vue specific TS Server
 					"lua_ls", -- Lua
@@ -26,12 +27,15 @@ return {
 
 			-- TODO: intelephense license?
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local border = "rounded"
+
+			pcall(vim.api.nvim_set_hl, 0, "FloatBorder", { fg = "#89b4fa", bg = "NONE" })
 
 			local function on_attach(_, bufnr) -- first arg was client, if ever needed
 				require("lsp_signature").on_attach({
 					bind = true,
 					handler_opts = {
-						border = "rounded",
+						border = border,
 					},
 					hint_prefix = "",
 					hint_enable = true,
@@ -121,10 +125,10 @@ return {
 			vim.lsp.config("vue_ls", vue_ls_config)
 			vim.lsp.enable({ "vtsls", "vue_ls" })
 
-            local base_config = {
+			local base_config = {
 				capabilities = capabilities,
 				on_attach = on_attach,
-            }
+			}
 			-- intelephense
 			vim.lsp.config("intelephense", base_config)
 
@@ -142,6 +146,9 @@ return {
 
 			-- Tailwind
 			vim.lsp.config("tailwindcss", base_config)
+
+			-- Astro
+			vim.lsp.config("astro", base_config)
 		end,
 	},
 }

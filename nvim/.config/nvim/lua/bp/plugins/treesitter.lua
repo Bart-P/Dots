@@ -8,6 +8,7 @@ return {
 				ensure_installed = {
 					"lua",
 					"php",
+					"astro",
 					"typescript",
 					"html",
 					"css",

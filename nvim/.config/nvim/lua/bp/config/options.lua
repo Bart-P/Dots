@@ -23,6 +23,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
+vim.opt.winborder = "rounded"
 
 -- for Obsidian, if in Vault "Brain2.0" set conceallevel=2
 -- if string.match(vim.fn.getcwd(), 'Brain2.0') then
