@@ -15,7 +15,6 @@ return {
 					"vue_ls", -- Vue
 					"vtsls", -- Vue specific TS Server
 					"lua_ls", -- Lua
-					"gopls", -- Go
 					"bashls", -- Bash
 					"pyright", -- Python
 					"html", -- Html
@@ -125,7 +124,6 @@ return {
 				end,
 			}
 			-- nvim 0.11 or above
-			vim.lsp.config("gopls", base_config)
 			vim.lsp.config("vtsls", vtsls_config)
 			vim.lsp.config("vue_ls", vue_ls_config)
 			vim.lsp.enable({ "vtsls", "vue_ls" })
