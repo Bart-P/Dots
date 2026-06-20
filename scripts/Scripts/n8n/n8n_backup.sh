@@ -7,6 +7,7 @@ DATA_DIR_NAME=".n8n"
 BACKUP_DIR="/home/bp/Backups/n8n"
 TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
 BACKUP_FILE="$BACKUP_DIR/n8n-backup-$TIMESTAMP.tar.gz"
+MANIFEST_FILE=""
 
 WAS_RUNNING="false"
 STARTED_AGAIN="false"
@@ -19,7 +20,15 @@ restart_n8n_if_needed() {
   fi
 }
 
-trap restart_n8n_if_needed EXIT
+cleanup_and_restart_n8n_if_needed() {
+  if [ -n "$MANIFEST_FILE" ]; then
+    rm -f "$MANIFEST_FILE"
+  fi
+
+  restart_n8n_if_needed
+}
+
+trap cleanup_and_restart_n8n_if_needed EXIT
 
 if ! command -v docker >/dev/null 2>&1; then
   echo "Docker is not installed."
@@ -53,10 +62,13 @@ fi
 sudo tar --xattrs --acls --numeric-owner -czf "$BACKUP_FILE" -C "$DATA_PARENT" "$DATA_DIR_NAME"
 sudo chown bp:bp "$BACKUP_FILE"
 
-tar -tzf "$BACKUP_FILE" | grep -qx ".n8n/config"
-tar -tzf "$BACKUP_FILE" | grep -qx ".n8n/database.sqlite"
+MANIFEST_FILE="$(mktemp)"
+tar -tzf "$BACKUP_FILE" >"$MANIFEST_FILE"
 
-if ! tar -tzf "$BACKUP_FILE" | grep -qx ".n8n/database.sqlite-wal"; then
+grep -Fx ".n8n/config" "$MANIFEST_FILE" >/dev/null
+grep -Fx ".n8n/database.sqlite" "$MANIFEST_FILE" >/dev/null
+
+if ! grep -Fx ".n8n/database.sqlite-wal" "$MANIFEST_FILE" >/dev/null; then
   echo "Warning: .n8n/database.sqlite-wal not found in backup."
 fi
 
@@ -67,4 +79,5 @@ echo "Checksum:"
 sha256sum "$BACKUP_FILE"
 
 restart_n8n_if_needed
+rm -f "$MANIFEST_FILE"
 trap - EXIT
