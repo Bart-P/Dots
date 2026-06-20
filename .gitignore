@@ -22,6 +22,7 @@ nvim/site/pack/packer/start/*/.git/  # nested git dirs (optional)
 # Ignore any lock files (like sessions or plugin management)
 nvim/**/lockfile
 nvim/**/.lock
+nvim/.config/nvim/lazy-lock.json
 
 # Python cache (e.g., for Qtile or MPD scripts)
 __pycache__/
