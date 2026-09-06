@@ -14,6 +14,6 @@ case "$CHOICE" in
         ;;
 
     "[l]-Logout")
-        qtile cmd-obj -o cmd -f shutdown
+        hyprctl dispatch 'hl.dsp.exit()'
         ;;
 esac

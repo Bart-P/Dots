@@ -18,6 +18,7 @@ return {
 					"bashls", -- Bash
 					"pyright", -- Python
 					"html", -- Html
+					"twiggy_language_server", -- Twig
 					"cssls", -- CSS
 					"tailwindcss", -- Tailwind
 				},
@@ -141,7 +142,20 @@ return {
 			vim.lsp.config("cssls", base_config)
 
 			-- HTML
-			vim.lsp.config("html", base_config)
+			vim.lsp.config("html", vim.tbl_deep_extend("force", base_config, {
+				filetypes = { "html", "twig" },
+			}))
+
+			-- Twig
+			vim.lsp.config("twiggy_language_server", vim.tbl_deep_extend("force", base_config, {
+				settings = {
+					twiggy = {
+						framework = "symfony",
+						phpExecutable = "/usr/bin/php",
+						symfonyConsolePath = "bin/console",
+					},
+				},
+			}))
 
 			-- Tailwind
 			vim.lsp.config("tailwindcss", base_config)

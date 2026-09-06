@@ -1,3 +1,2 @@
-require('bp.config.lazy')
-require('bp.config.options')
-require('bp.config.keymaps')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

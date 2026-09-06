@@ -1,0 +1,61 @@
+{
+    "layer": "top",
+    "position": "top",
+    "output": ["DP-3", "DP-4"],
+    "height": 32,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+
+    "modules-left": [
+        "custom/power",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "custom/date",
+        "clock"
+    ],
+
+    "custom/power": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "/home/bp/Scripts/rofi/powermenu.sh"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "all-outputs": true,
+        "move-to-monitor": true,
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 80,
+        "separate-outputs": true
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8
+    },
+
+    "custom/date": {
+        "exec": "date '+%a %d.%m.%y'",
+        "interval": 60,
+        "tooltip": false,
+        "on-click": "gnome-calendar"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    }
+}

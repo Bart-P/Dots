@@ -11,6 +11,7 @@ return {
 					"astro",
 					"typescript",
 					"html",
+					"twig",
 					"css",
 					"styled",
 					"json",
